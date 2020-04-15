@@ -9,10 +9,19 @@
 /* Begin PBXBuildFile section */
 		072B3B552929B7529FE372362235478C /* MenuViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5843362B54646C798E5916FFA50ABE14 /* MenuViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C25A6CB2D59DE8CFB6954118F322C76 /* Pods-MenuViewController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 68F3452502C11A2A97E585C8D76C6C90 /* Pods-MenuViewController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3484406D24469EBB0081CD70 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484406124469EBB0081CD70 /* MenuTableViewController.swift */; };
+		3484406E24469EBB0081CD70 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 3484406224469EBB0081CD70 /* .gitkeep */; };
+		3484406F24469EBB0081CD70 /* MenuViewControllerSizedPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484406424469EBB0081CD70 /* MenuViewControllerSizedPushAnimator.swift */; };
+		3484407024469EBB0081CD70 /* MenuViewControllerSizedPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484406524469EBB0081CD70 /* MenuViewControllerSizedPopAnimator.swift */; };
+		3484407124469EBB0081CD70 /* MenuViewControllerPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484406624469EBB0081CD70 /* MenuViewControllerPushAnimator.swift */; };
+		3484407224469EBB0081CD70 /* MenuViewControllerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484406724469EBB0081CD70 /* MenuViewControllerAnimator.swift */; };
+		3484407324469EBB0081CD70 /* MenuViewControllerPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484406824469EBB0081CD70 /* MenuViewControllerPopAnimator.swift */; };
+		3484407424469EBB0081CD70 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484406A24469EBB0081CD70 /* UIView+Extensions.swift */; };
+		3484407524469EBB0081CD70 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484406B24469EBB0081CD70 /* Bundle+Extensions.swift */; };
+		3484407624469EBB0081CD70 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484406C24469EBB0081CD70 /* MenuViewController.swift */; };
 		5209FB72BC03D6C3F609E3BB6339B84E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		5935975FC64D778A6D5667E1EA142DAB /* Pods-MenuViewController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A30B530588511B5C6CB3E76FB896401 /* Pods-MenuViewController_Tests-dummy.m */; };
 		6F68D40E170009163561A4A9ADCF8864 /* Pods-MenuViewController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B465282C728373FFE8D7F9D10E4BA99C /* Pods-MenuViewController_Example-dummy.m */; };
-		766AFB0894EBA0CCB450E28832CD7915 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DB3EC144A2B471E168B98A462DB0BC /* ReplaceMe.swift */; };
 		B3AF7CBF7E12885A433185BF7642DF10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		BDFDC736C4B183182BA89999169C3CE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		DC7EA86A4CB7AF23903AB34B27CCBF85 /* MenuViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7C7BE96D3232A8312986EA10A39743 /* MenuViewController-dummy.m */; };
@@ -40,29 +49,38 @@
 		3109F43CBE7972F70E4FBD1C805EBC86 /* Pods-MenuViewController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MenuViewController_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		319B455826F46CCC1197097AF6732AF4 /* Pods-MenuViewController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MenuViewController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3484406124469EBB0081CD70 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		3484406224469EBB0081CD70 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		3484406424469EBB0081CD70 /* MenuViewControllerSizedPushAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewControllerSizedPushAnimator.swift; sourceTree = "<group>"; };
+		3484406524469EBB0081CD70 /* MenuViewControllerSizedPopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewControllerSizedPopAnimator.swift; sourceTree = "<group>"; };
+		3484406624469EBB0081CD70 /* MenuViewControllerPushAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewControllerPushAnimator.swift; sourceTree = "<group>"; };
+		3484406724469EBB0081CD70 /* MenuViewControllerAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewControllerAnimator.swift; sourceTree = "<group>"; };
+		3484406824469EBB0081CD70 /* MenuViewControllerPopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewControllerPopAnimator.swift; sourceTree = "<group>"; };
+		3484406A24469EBB0081CD70 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		3484406B24469EBB0081CD70 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		3484406C24469EBB0081CD70 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5843362B54646C798E5916FFA50ABE14 /* MenuViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MenuViewController-umbrella.h"; sourceTree = "<group>"; };
 		60C50B66A1D1ED514DA519211B06D0DA /* Pods-MenuViewController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MenuViewController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		60DB3EC144A2B471E168B98A462DB0BC /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = MenuViewController/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		67BB80D044D2DE26C5A28907B8CFD4B5 /* MenuViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MenuViewController-Info.plist"; sourceTree = "<group>"; };
 		68F3452502C11A2A97E585C8D76C6C90 /* Pods-MenuViewController_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MenuViewController_Example-umbrella.h"; sourceTree = "<group>"; };
 		6BDC037C8E7F008D03E9E837117C77D1 /* Pods-MenuViewController_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MenuViewController_Example-Info.plist"; sourceTree = "<group>"; };
 		748E68D2F5520C1AD49792B15E1DA465 /* Pods-MenuViewController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MenuViewController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		77209D440508A57D9EA642A83CB8E585 /* Pods_MenuViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MenuViewController_Tests.framework; path = "Pods-MenuViewController_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77209D440508A57D9EA642A83CB8E585 /* Pods_MenuViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenuViewController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		791F8B7329D512565CCC0AA27AC817ED /* Pods-MenuViewController_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MenuViewController_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		82A06C5EBC026638E3394944C72A7A6E /* Pods-MenuViewController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MenuViewController_Tests-umbrella.h"; sourceTree = "<group>"; };
 		8BE12E4CC306D6DD89A5A54DD58F6A7B /* MenuViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MenuViewController-prefix.pch"; sourceTree = "<group>"; };
-		903FC4D8273A3C9B9F38256E91517562 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		903FC4D8273A3C9B9F38256E91517562 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9A30B530588511B5C6CB3E76FB896401 /* Pods-MenuViewController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MenuViewController_Tests-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EA939269173AEF64B3DE2B66DBEFF83 /* Pods-MenuViewController_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MenuViewController_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		9FD1AE02E5907A111828344437575DB8 /* Pods-MenuViewController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MenuViewController_Tests.modulemap"; sourceTree = "<group>"; };
 		A417C5CFBD01AA25BD49C9B8F90F1BA2 /* Pods-MenuViewController_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MenuViewController_Example.modulemap"; sourceTree = "<group>"; };
-		A8C5A2528BBDDB3A76211CED066394DC /* Pods_MenuViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MenuViewController_Example.framework; path = "Pods-MenuViewController_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AEDB09F94945850AF18634E6AAEC1EF9 /* MenuViewController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MenuViewController.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A8C5A2528BBDDB3A76211CED066394DC /* Pods_MenuViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenuViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDB09F94945850AF18634E6AAEC1EF9 /* MenuViewController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = MenuViewController.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B29423228701E3CC2A66EBFC82C3BC52 /* Pods-MenuViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MenuViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
-		B346A868679D03320F390CD5E23023F7 /* MenuViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MenuViewController.framework; path = MenuViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B346A868679D03320F390CD5E23023F7 /* MenuViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MenuViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B465282C728373FFE8D7F9D10E4BA99C /* Pods-MenuViewController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MenuViewController_Example-dummy.m"; sourceTree = "<group>"; };
-		CC4B6582F2CD2408D1B3B45541D62EF1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		CC4B6582F2CD2408D1B3B45541D62EF1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DE48CC16B755BE9FD0D335E5A26D3CD5 /* Pods-MenuViewController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MenuViewController_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		DF7C7BE96D3232A8312986EA10A39743 /* MenuViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MenuViewController-dummy.m"; sourceTree = "<group>"; };
 		E0D0B6A2878F9EF4C83FF9E8CFF5F170 /* Pods-MenuViewController_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MenuViewController_Tests-Info.plist"; sourceTree = "<group>"; };
@@ -100,6 +118,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3484406024469EBB0081CD70 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3484406124469EBB0081CD70 /* MenuTableViewController.swift */,
+				3484406224469EBB0081CD70 /* .gitkeep */,
+				3484406324469EBB0081CD70 /* Animators */,
+				3484406924469EBB0081CD70 /* Extensions */,
+				3484406C24469EBB0081CD70 /* MenuViewController.swift */,
+			);
+			name = Classes;
+			path = MenuViewController/Classes;
+			sourceTree = "<group>";
+		};
+		3484406324469EBB0081CD70 /* Animators */ = {
+			isa = PBXGroup;
+			children = (
+				3484406424469EBB0081CD70 /* MenuViewControllerSizedPushAnimator.swift */,
+				3484406524469EBB0081CD70 /* MenuViewControllerSizedPopAnimator.swift */,
+				3484406624469EBB0081CD70 /* MenuViewControllerPushAnimator.swift */,
+				3484406724469EBB0081CD70 /* MenuViewControllerAnimator.swift */,
+				3484406824469EBB0081CD70 /* MenuViewControllerPopAnimator.swift */,
+			);
+			path = Animators;
+			sourceTree = "<group>";
+		};
+		3484406924469EBB0081CD70 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3484406A24469EBB0081CD70 /* UIView+Extensions.swift */,
+				3484406B24469EBB0081CD70 /* Bundle+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		6127E4F4EB0A4E0A7628F49D6167A701 /* Pods-MenuViewController_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,7 +267,7 @@
 		E40FB19ABDF93BCC502DE4812723FA30 /* MenuViewController */ = {
 			isa = PBXGroup;
 			children = (
-				60DB3EC144A2B471E168B98A462DB0BC /* ReplaceMe.swift */,
+				3484406024469EBB0081CD70 /* Classes */,
 				BC961C16B6DFA830D42C2AE3918D5D84 /* Pod */,
 				CBB57C2208409CFFAC5DA3E406270231 /* Support Files */,
 			);
@@ -350,6 +402,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3484406E24469EBB0081CD70 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,8 +436,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3484407224469EBB0081CD70 /* MenuViewControllerAnimator.swift in Sources */,
+				3484407624469EBB0081CD70 /* MenuViewController.swift in Sources */,
+				3484407324469EBB0081CD70 /* MenuViewControllerPopAnimator.swift in Sources */,
+				3484407024469EBB0081CD70 /* MenuViewControllerSizedPopAnimator.swift in Sources */,
+				3484407524469EBB0081CD70 /* Bundle+Extensions.swift in Sources */,
+				3484406D24469EBB0081CD70 /* MenuTableViewController.swift in Sources */,
 				DC7EA86A4CB7AF23903AB34B27CCBF85 /* MenuViewController-dummy.m in Sources */,
-				766AFB0894EBA0CCB450E28832CD7915 /* ReplaceMe.swift in Sources */,
+				3484407124469EBB0081CD70 /* MenuViewControllerPushAnimator.swift in Sources */,
+				3484407424469EBB0081CD70 /* UIView+Extensions.swift in Sources */,
+				3484406F24469EBB0081CD70 /* MenuViewControllerSizedPushAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,8 +650,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
