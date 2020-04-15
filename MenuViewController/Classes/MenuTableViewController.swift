@@ -28,6 +28,8 @@ public class MenuTableViewController: UITableViewController {
 
     public var dismissOnSelection: Bool = true
 
+    public var hasNavigationController: Bool = false
+
     public var menuItems: [(image: UIImage, title: String)] = [] {
         didSet {
             super.preferredContentSize.height = CGFloat(self.menuItems.count) * self.tableView.rowHeight
@@ -53,6 +55,10 @@ public class MenuTableViewController: UITableViewController {
         tableView.rowHeight = 40
         tableView.contentInset.top = 15
         tableView.isScrollEnabled = false
+
+        if hasNavigationController {
+            tableView.contentInset.top += 30
+        }
 
     }
 

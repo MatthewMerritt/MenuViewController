@@ -61,6 +61,10 @@ public class MenuViewController: UIViewController {
 
         self.preferredContentSize = preferredContentSize
 
+        if shouldHideNavigationBar == false {
+            self.preferredContentSize.height += self.wrappedNavigationController.navigationBar.frame.height + 20
+        }
+
         if let sourceView = sourceView, let sourceRect = sourceRect {
             self.popoverPresentationController?.sourceView = sourceView
             self.popoverPresentationController?.sourceRect = sourceRect
@@ -183,8 +187,7 @@ extension MenuViewController: UINavigationControllerDelegate {
                 self.wrappedNavigationController.setNavigationBarHidden(false, animated: true)
             }
 
-            return MenuViewControllerSizedPushAnimator(type: .navigation, duration: 5.25)
-//            return SystemPushAnimator(type: .navigation, duration: 0.25)
+            return MenuViewControllerPushAnimator(type: .navigation, duration: 5.25)
 
         case .pop:
             if shouldHideNavigationBar {

@@ -121,10 +121,10 @@
 		3484406024469EBB0081CD70 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3484406124469EBB0081CD70 /* MenuTableViewController.swift */,
 				3484406224469EBB0081CD70 /* .gitkeep */,
 				3484406324469EBB0081CD70 /* Animators */,
 				3484406924469EBB0081CD70 /* Extensions */,
+				3484406124469EBB0081CD70 /* MenuTableViewController.swift */,
 				3484406C24469EBB0081CD70 /* MenuViewController.swift */,
 			);
 			name = Classes;
