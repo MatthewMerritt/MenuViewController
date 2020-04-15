@@ -1,0 +1,6 @@
+framework module MenuViewController {
+  umbrella header "MenuViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "MenuViewController",
+  "version": "0.1.0",
+  "summary": "A short description of MenuViewController.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/MatthewMerritt/MenuViewController",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "MatthewMerritt": "matthew.merritt@yahoo.com"
+  },
+  "source": {
+    "git": "https://github.com/MatthewMerritt/MenuViewController.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "MenuViewController/Classes/**/*"
+}

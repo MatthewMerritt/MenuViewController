@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		25AC19EC8BED543314C4665F /* Pods_MenuViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenuViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BE9FC65010ADFC0B230361 /* Pods_MenuViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenuViewController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		44EA3CDB6F0C4665F0D8A52E /* MenuViewController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MenuViewController.podspec; path = ../MenuViewController.podspec; sourceTree = "<group>"; };
+		44EA3CDB6F0C4665F0D8A52E /* MenuViewController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MenuViewController.podspec; path = ../MenuViewController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5450D6A1F5F961F6F3CF3395 /* Pods-MenuViewController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenuViewController_Tests.release.xcconfig"; path = "Target Support Files/Pods-MenuViewController_Tests/Pods-MenuViewController_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* MenuViewController_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuViewController_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,8 +43,8 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		8C793975024B7137BC25C468 /* Pods-MenuViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenuViewController_Example.release.xcconfig"; path = "Target Support Files/Pods-MenuViewController_Example/Pods-MenuViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
-		949DF1F42C279ADAF7A30BD1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		B53786F41E6AF44EB442FDE9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		949DF1F42C279ADAF7A30BD1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B53786F41E6AF44EB442FDE9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		CA4418DF4AF44FE7CD5DB4EE /* Pods-MenuViewController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenuViewController_Tests.debug.xcconfig"; path = "Target Support Files/Pods-MenuViewController_Tests/Pods-MenuViewController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		FEABD25BB291EFBAFBA40EA8 /* Pods-MenuViewController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenuViewController_Example.debug.xcconfig"; path = "Target Support Files/Pods-MenuViewController_Example/Pods-MenuViewController_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,7 +156,6 @@
 				CA4418DF4AF44FE7CD5DB4EE /* Pods-MenuViewController_Tests.debug.xcconfig */,
 				5450D6A1F5F961F6F3CF3395 /* Pods-MenuViewController_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

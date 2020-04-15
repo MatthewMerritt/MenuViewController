@@ -1,0 +1,16 @@
+PODS:
+  - MenuViewController (0.1.0)
+
+DEPENDENCIES:
+  - MenuViewController (from `../`)
+
+EXTERNAL SOURCES:
+  MenuViewController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MenuViewController: b5d9259b8c8260b237070653e62afe820e20a9f4
+
+PODFILE CHECKSUM: e6b89c36ee9647b31f484f8ec3f602e4b2027745
+
+COCOAPODS: 1.9.1
