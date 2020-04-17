@@ -59,6 +59,17 @@ public class MenuViewController: UIViewController {
 
         super.init(nibName: nil, bundle: nil)
 
+        wrappedNavigationController = UINavigationController(rootViewController: rootViewController)
+        wrappedNavigationController.delegate = self
+
+        self.shouldHideNavigationBar = shouldHideNavigationBar
+        self.modalPresentationStyle = modalPresentationStyle
+        self.preferredContentSize = preferredContentSize
+
+        if shouldHideNavigationBar == false {
+            self.preferredContentSize.height += self.wrappedNavigationController.navigationBar.frame.height + 20
+        }
+
         if let sourceView = sourceView, let sourceRect = sourceRect {
             self.popoverPresentationController?.sourceView = sourceView
             self.popoverPresentationController?.sourceRect = sourceRect
@@ -68,18 +79,7 @@ public class MenuViewController: UIViewController {
             fatalError("Must have either sourceView & sourceRect or barButtonItem.")
         }
 
-        wrappedNavigationController = UINavigationController(rootViewController: rootViewController)
-        wrappedNavigationController.delegate = self
-
-        self.modalPresentationStyle = modalPresentationStyle
-        self.preferredContentSize = preferredContentSize
         self.hasDoneButton = hasDoneButton
-
-        self.shouldHideNavigationBar = shouldHideNavigationBar
-
-        if shouldHideNavigationBar == false {
-            self.preferredContentSize.height += self.wrappedNavigationController.navigationBar.frame.height + 20
-        }
 
         if hasDoneButton, let navigationItem = wrappedNavigationController.viewControllers.first?.navigationItem {
             let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(hide))
@@ -187,7 +187,7 @@ extension MenuViewController: UINavigationControllerDelegate {
                 self.wrappedNavigationController.setNavigationBarHidden(false, animated: true)
             }
 
-            return MenuViewControllerPushAnimator(type: .navigation, duration: 0.25)
+            return MenuViewControllerPushAnimator(type: .navigation, duration: 5.25)
 
         case .pop:
             if shouldHideNavigationBar {

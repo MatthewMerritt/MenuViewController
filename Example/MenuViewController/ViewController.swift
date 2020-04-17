@@ -45,9 +45,9 @@ extension ViewController: MenuTableViewControllerDelegate {
             (image: UIImage(named: "Circle")!, title: "PDFForm"),
         ]
 
-        pushController = MenuViewController(rootViewController: addRepMenuPopoverViewController, modalPresentationStyle: .custom, preferredContentSize: addRepMenuPopoverViewController.preferredContentSize, barButtonItem: sender, hasDoneButton: true)
+        pushController = MenuViewController(rootViewController: addRepMenuPopoverViewController, modalPresentationStyle: .popover, preferredContentSize: addRepMenuPopoverViewController.preferredContentSize, barButtonItem: sender, sourceView: self.view, sourceRect: CGRect(x: 0, y: 0, width: 20, height: 20), hasDoneButton: true)
 
-        pushController.shouldHideNavigationBar = false
+        pushController.shouldHideNavigationBar = true
 
         pushController.present()
 
@@ -57,7 +57,7 @@ extension ViewController: MenuTableViewControllerDelegate {
 
     func didSelectMenu(popoverMenuViewController: MenuTableViewController, row: Int) {
 
-        popoverMenuViewController.navigationController?.pushViewController(UIViewController(), animated: true)
+//        popoverMenuViewController.navigationController?.pushViewController(UIViewController(), animated: true)
         popoverMenuViewController.tableView.deselectRow(at: IndexPath(row: row, section: 0), animated: false)
 
     }
