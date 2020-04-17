@@ -31,7 +31,7 @@ open class MenuViewControllerPushAnimator: MenuViewControllerAnimator {
             toViewStartFrame.origin.x += (containerView.frame.width)
             toView?.frame = toViewStartFrame
 
-            UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0.0, options: UIView.AnimationOptions.curveEaseInOut, animations: { () -> Void in
+            UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0.0, options: .curveEaseInOut, animations: { () -> Void in
                 toView?.frame = toViewEndFrame
                 fromView?.frame = fromViewEndFrame!
             }, completion: { (completed) -> Void in

@@ -34,7 +34,7 @@ extension ViewController: MenuTableViewControllerDelegate {
         addRepMenuPopoverViewController.preferredContentSize = CGSize(width: 200, height: 90)
         addRepMenuPopoverViewController.modalPresentationStyle = .custom
         addRepMenuPopoverViewController.delegate = self
-        addRepMenuPopoverViewController.dismissOnSelection = true
+        addRepMenuPopoverViewController.dismissOnSelection = false
         addRepMenuPopoverViewController.hasNavigationController = true
 
         addRepMenuPopoverViewController.menuItems = [
@@ -57,7 +57,7 @@ extension ViewController: MenuTableViewControllerDelegate {
 
     func didSelectMenu(popoverMenuViewController: MenuTableViewController, row: Int) {
 
-        //        popoverMenuViewController.navigationController?.pushViewController(UIViewController(), animated: true)
+        popoverMenuViewController.navigationController?.pushViewController(UIViewController(), animated: true)
         popoverMenuViewController.tableView.deselectRow(at: IndexPath(row: row, section: 0), animated: false)
 
     }

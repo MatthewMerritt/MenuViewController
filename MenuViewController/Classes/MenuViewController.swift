@@ -36,7 +36,7 @@ public class MenuViewController: UIViewController {
     }
 
     //
-    private var wrappedNavigationController: UINavigationController
+    private var wrappedNavigationController: UINavigationController!
     private var scrollView: UIScrollView?
 
     public var shouldHideNavigationBar = false {
@@ -48,31 +48,38 @@ public class MenuViewController: UIViewController {
     private var hasDoneButton = false
 
     /// Init with all settings
-    public init(rootViewController: UIViewController, shouldHideNavigationBar: Bool = false, modalPresentationStyle: UIModalPresentationStyle = .custom, preferredContentSize: CGSize = CGSize(width: 0, height: 200), barButtonItem: UIBarButtonItem? = nil, sourceView: UIView? = nil, sourceRect: CGRect? = nil, hasDoneButton: Bool = false) {
-
-        self.wrappedNavigationController = UINavigationController(rootViewController: rootViewController)
-        self.shouldHideNavigationBar = shouldHideNavigationBar
+    public init(rootViewController: UIViewController,
+                shouldHideNavigationBar: Bool = false,
+                modalPresentationStyle: UIModalPresentationStyle = .custom,
+                preferredContentSize: CGSize = CGSize(width: 0, height: 200),
+                barButtonItem: UIBarButtonItem? = nil,
+                sourceView: UIView? = nil,
+                sourceRect: CGRect? = nil,
+                hasDoneButton: Bool = false) {
 
         super.init(nibName: nil, bundle: nil)
-
-        self.wrappedNavigationController.delegate = self
-        self.modalPresentationStyle = modalPresentationStyle
-        self.transitioningDelegate = self
-
-        self.preferredContentSize = preferredContentSize
-
-        if shouldHideNavigationBar == false {
-            self.preferredContentSize.height += self.wrappedNavigationController.navigationBar.frame.height + 20
-        }
 
         if let sourceView = sourceView, let sourceRect = sourceRect {
             self.popoverPresentationController?.sourceView = sourceView
             self.popoverPresentationController?.sourceRect = sourceRect
         } else if let barButtonItem = barButtonItem {
             self.popoverPresentationController?.barButtonItem = barButtonItem
+        } else {
+            fatalError("Must have either sourceView & sourceRect or barButtonItem.")
         }
 
+        wrappedNavigationController = UINavigationController(rootViewController: rootViewController)
+        wrappedNavigationController.delegate = self
+
+        self.modalPresentationStyle = modalPresentationStyle
+        self.preferredContentSize = preferredContentSize
         self.hasDoneButton = hasDoneButton
+
+        self.shouldHideNavigationBar = shouldHideNavigationBar
+
+        if shouldHideNavigationBar == false {
+            self.preferredContentSize.height += self.wrappedNavigationController.navigationBar.frame.height + 20
+        }
 
         if hasDoneButton, let navigationItem = wrappedNavigationController.viewControllers.first?.navigationItem {
             let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(hide))
@@ -95,8 +102,7 @@ public class MenuViewController: UIViewController {
         addChild(wrappedNavigationController)
         view.addSubview(wrappedNavigationController.view)
 
-        self.transitioningDelegate = self
-
+        // We only allow gestured closing on .custom
         if modalPresentationStyle == .custom {
             // Listen for pan gesture
             let panGesture = UIPanGestureRecognizer(target: self, action: #selector(onPan(_:)))
@@ -118,9 +124,7 @@ public class MenuViewController: UIViewController {
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        self.transitioningDelegate = self
-
-
+        // We only allow gestured closing on .custom
         if modalPresentationStyle == .custom {
             scrollView = findScrollView(from: self.view) as? UIScrollView
             scrollView?.addObserver(self, forKeyPath: #keyPath(UIScrollView.contentOffset), options: [.new, .old], context: nil)
@@ -137,7 +141,7 @@ public class MenuViewController: UIViewController {
         }
     }
 
-    func findScrollView(from view: UIView) -> UIView?{
+    func findScrollView(from view: UIView) -> UIView? {
         return view.firstSubView(ofType: UIScrollView.self)
     }
 
@@ -145,16 +149,12 @@ public class MenuViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    override public func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-    }
-
     public func present(_ viewController: UIViewController? = nil) {
+        // Set delegates
         presentationController?.delegate = self
-
-//        modalPresentationStyle = .custom
         transitioningDelegate = self
 
+        // If we are not attached to a UIViewController then present on main window
         guard viewController != nil else {
             UIApplication.shared.windows.first { $0.isKeyWindow }?.rootViewController?.present(self, animated: true)
             return
@@ -187,7 +187,7 @@ extension MenuViewController: UINavigationControllerDelegate {
                 self.wrappedNavigationController.setNavigationBarHidden(false, animated: true)
             }
 
-            return MenuViewControllerPushAnimator(type: .navigation, duration: 5.25)
+            return MenuViewControllerPushAnimator(type: .navigation, duration: 0.25)
 
         case .pop:
             if shouldHideNavigationBar {
@@ -201,7 +201,6 @@ extension MenuViewController: UINavigationControllerDelegate {
             return nil
         }
     }
-    
 
 }
 
@@ -241,7 +240,7 @@ extension MenuViewController: UIGestureRecognizerDelegate {
     
     @objc func onPan(_ panGesture: UIPanGestureRecognizer) {
 
-        func slideViewVerticallyTo(_ y: CGFloat) {
+        func slideViewVertically(to y: CGFloat) {
             self.view.superview!.frame.origin = CGPoint(x: 0, y: y)
         }
 
@@ -258,14 +257,11 @@ extension MenuViewController: UIGestureRecognizerDelegate {
             // If pan started or is ongoing then
             // slide the view to follow the finger
             startLocationY = startLocationY == 0 ? -translation.y : startLocationY
-            slideViewVerticallyTo(startLocationY + y)
-
-//                let y = max(0, translation.x)
-//                slideViewHorizontallyTo(y)
+            slideViewVertically(to: startLocationY + y)
 
         case .ended:
 
-            // If pan ended, decide it we should close or reset the view
+            // If pan ended, decide if we should close or reset the view
             // based on the final position and the speed of the gesture
             startLocationY = 0
             let translation = panGesture.translation(in: view)
@@ -276,8 +272,7 @@ extension MenuViewController: UIGestureRecognizerDelegate {
             if closing {
                 UIView.animate(withDuration: animationDuration, animations: {
                     // If closing, animate to the bottom of the view
-                    slideViewVerticallyTo(self.view.frame.size.height)
-//                        slideViewHorizontallyTo(self.view.frame.size.width)
+                    slideViewVertically(to: self.view.frame.size.height)
                 }, completion: { (isCompleted) in
                     if isCompleted {
                         // Dismiss the view when it dissapeared
@@ -287,8 +282,7 @@ extension MenuViewController: UIGestureRecognizerDelegate {
             } else {
                 // If not closing, reset the view to the top
                 UIView.animate(withDuration: animationDuration, animations: {
-                    slideViewVerticallyTo(0)
-//                        slideViewHorizontallyTo(0)
+                    slideViewVertically(to: 0)
                 })
             }
 
@@ -297,10 +291,7 @@ extension MenuViewController: UIGestureRecognizerDelegate {
             startLocationY = 0
 
             UIView.animate(withDuration: animationDuration, animations: {
-                slideViewVerticallyTo(0)
-
-//                    slideViewVerticallyTo(0)
-//                    slideViewHorizontallyTo(0)
+                slideViewVertically(to: 0)
             })
 
         }
