@@ -187,7 +187,7 @@ extension MenuViewController: UINavigationControllerDelegate {
                 self.wrappedNavigationController.setNavigationBarHidden(false, animated: true)
             }
 
-            return MenuViewControllerPushAnimator(type: .navigation, duration: 5.25)
+            return MenuViewControllerPushAnimator(type: .navigation, duration: 0.25)
 
         case .pop:
             if shouldHideNavigationBar {
