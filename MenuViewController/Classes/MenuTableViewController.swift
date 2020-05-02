@@ -27,7 +27,7 @@ public class MenuTableViewController: UITableViewController {
         didSet {
             super.preferredContentSize.height = CGFloat(self.menuItems.count) * self.tableView.rowHeight
 
-            super.preferredContentSize.width = self.menuItems.map { $0.title.size(with: UIFont.preferredFont(forTextStyle: .body)).width }.max()! + 56
+            super.preferredContentSize.width = self.menuItems.map { $0.title.size(withAttributes: [.font : UIFont.preferredFont(forTextStyle: .body)]).width }.max()! + 57
 
             self.tableView.reloadData()
         }
