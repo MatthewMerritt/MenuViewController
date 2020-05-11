@@ -15,7 +15,7 @@ public protocol MenuTableViewControllerDelegate {
 }
 
 // MARK: - MenuTableViewController
-public class MenuTableViewController: UITableViewController {
+open class MenuTableViewController: UITableViewController {
 
     public var delegate: MenuTableViewControllerDelegate?
 
@@ -25,9 +25,12 @@ public class MenuTableViewController: UITableViewController {
 
     public var menuItems: [(image: UIImage, title: String)] = [] {
         didSet {
-            super.preferredContentSize.height = CGFloat(self.menuItems.count) * self.tableView.rowHeight
 
-            super.preferredContentSize.width = self.menuItems.map { $0.title.size(withAttributes: [.font : UIFont.preferredFont(forTextStyle: .body)]).width }.max()! + 57
+            self.preferredContentSize.height = CGFloat(self.menuItems.count) * self.tableView.rowHeight + (self.hasNavigationController ? 44 : 0)
+            self.parent?.parent?.preferredContentSize.height = CGFloat(self.menuItems.count) * self.tableView.rowHeight + (self.hasNavigationController ? 44 : 0)
+
+            self.preferredContentSize.width = self.menuItems.map { $0.title.size(withAttributes: [.font : UIFont.preferredFont(forTextStyle: .body)]).width }.max()! + 57
+            self.parent?.parent?.preferredContentSize.width = self.menuItems.map { $0.title.size(withAttributes: [.font : UIFont.preferredFont(forTextStyle: .body)]).width }.max()! + 57
 
             self.tableView.reloadData()
         }
@@ -56,11 +59,15 @@ public class MenuTableViewController: UITableViewController {
     }
 
     public override func viewWillAppear(_ animated: Bool) {
+        self.menuItems = { self.menuItems }()
         super.viewWillAppear(animated)
 
-        if popoverPresentationController?.arrowDirection == .down {
-            tableView.contentInset.top = 0
-        }
+        //        if popoverPresentationController?.arrowDirection == .down {
+        //        if navigationController?.isNavigationBarHidden == false {
+        //                tableView.contentInset.top = 45
+        //        } else {
+        tableView.contentInset.top = 0
+        //        }
     }
 
     public override func numberOfSections(in tableView: UITableView) -> Int {

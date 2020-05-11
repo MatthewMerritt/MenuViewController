@@ -19,6 +19,7 @@
 		3484407424469EBB0081CD70 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484406A24469EBB0081CD70 /* UIView+Extensions.swift */; };
 		3484407524469EBB0081CD70 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484406B24469EBB0081CD70 /* Bundle+Extensions.swift */; };
 		3484407624469EBB0081CD70 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484406C24469EBB0081CD70 /* MenuViewController.swift */; };
+		34911EBA2469CEBB0082FB0C /* MenuEmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34911EB92469CEBB0082FB0C /* MenuEmptyViewController.swift */; };
 		5209FB72BC03D6C3F609E3BB6339B84E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		5935975FC64D778A6D5667E1EA142DAB /* Pods-MenuViewController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A30B530588511B5C6CB3E76FB896401 /* Pods-MenuViewController_Tests-dummy.m */; };
 		6F68D40E170009163561A4A9ADCF8864 /* Pods-MenuViewController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B465282C728373FFE8D7F9D10E4BA99C /* Pods-MenuViewController_Example-dummy.m */; };
@@ -59,6 +60,7 @@
 		3484406A24469EBB0081CD70 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		3484406B24469EBB0081CD70 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		3484406C24469EBB0081CD70 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		34911EB92469CEBB0082FB0C /* MenuEmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuEmptyViewController.swift; sourceTree = "<group>"; };
 		5843362B54646C798E5916FFA50ABE14 /* MenuViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MenuViewController-umbrella.h"; sourceTree = "<group>"; };
 		60C50B66A1D1ED514DA519211B06D0DA /* Pods-MenuViewController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MenuViewController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		67BB80D044D2DE26C5A28907B8CFD4B5 /* MenuViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MenuViewController-Info.plist"; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				3484406324469EBB0081CD70 /* Animators */,
 				3484406924469EBB0081CD70 /* Extensions */,
 				3484406124469EBB0081CD70 /* MenuTableViewController.swift */,
+				34911EB92469CEBB0082FB0C /* MenuEmptyViewController.swift */,
 				3484406C24469EBB0081CD70 /* MenuViewController.swift */,
 			);
 			name = Classes;
@@ -454,6 +457,7 @@
 				3484407024469EBB0081CD70 /* MenuViewControllerSizedPopAnimator.swift in Sources */,
 				3484407524469EBB0081CD70 /* Bundle+Extensions.swift in Sources */,
 				3484406D24469EBB0081CD70 /* MenuTableViewController.swift in Sources */,
+				34911EBA2469CEBB0082FB0C /* MenuEmptyViewController.swift in Sources */,
 				DC7EA86A4CB7AF23903AB34B27CCBF85 /* MenuViewController-dummy.m in Sources */,
 				3484407124469EBB0081CD70 /* MenuViewControllerPushAnimator.swift in Sources */,
 				3484407424469EBB0081CD70 /* UIView+Extensions.swift in Sources */,

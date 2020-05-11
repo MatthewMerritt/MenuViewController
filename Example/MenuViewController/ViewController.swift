@@ -11,6 +11,8 @@ import MenuViewController
 
 class ViewController: UIViewController {
 
+    var pushController: MenuViewController!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,9 +27,8 @@ class ViewController: UIViewController {
 
 extension ViewController: MenuTableViewControllerDelegate {
 
-    @IBAction func infoButtonTapped(_ sender: UIBarButtonItem) {
 
-        var pushController: MenuViewController!
+    @IBAction func infoButtonTapped(_ sender: UIBarButtonItem) {
 
         let addRepMenuPopoverViewController = MenuTableViewController()
 
@@ -35,7 +36,7 @@ extension ViewController: MenuTableViewControllerDelegate {
         addRepMenuPopoverViewController.modalPresentationStyle = .custom
         addRepMenuPopoverViewController.delegate = self
         addRepMenuPopoverViewController.dismissOnSelection = false
-        addRepMenuPopoverViewController.hasNavigationController = true
+        addRepMenuPopoverViewController.hasNavigationController = false
 
         addRepMenuPopoverViewController.menuItems = [
             (image: UIImage(named: "Circle")!, title: "\(Bundle.main.displayName) \(Bundle.main.versionString)"),
@@ -45,9 +46,10 @@ extension ViewController: MenuTableViewControllerDelegate {
             (image: UIImage(named: "Circle")!, title: "PDFForm"),
         ]
 
-        pushController = MenuViewController(rootViewController: addRepMenuPopoverViewController, modalPresentationStyle: .popover, preferredContentSize: addRepMenuPopoverViewController.preferredContentSize, barButtonItem: sender, sourceView: self.view, sourceRect: CGRect(x: 0, y: 0, width: 20, height: 20), hasDoneButton: true)
+        pushController = MenuViewController(rootViewController: addRepMenuPopoverViewController, modalPresentationStyle: .popover, preferredContentSize: addRepMenuPopoverViewController.preferredContentSize, barButtonItem: sender, hasDoneButton: false)
 
         pushController.shouldHideNavigationBar = true
+        pushController.preferredContentSize = addRepMenuPopoverViewController.preferredContentSize
 
         pushController.present()
 
@@ -55,11 +57,42 @@ extension ViewController: MenuTableViewControllerDelegate {
 
     }
 
+    @IBAction func actionButtonAction(_ sender: UIBarButtonItem) {
+        let addRepMenuPopoverViewController = MenuTableViewController()
+        addRepMenuPopoverViewController.preferredContentSize = CGSize(width: 200, height: 10)
+
+        addRepMenuPopoverViewController.delegate = self
+        addRepMenuPopoverViewController.dismissOnSelection = false
+        addRepMenuPopoverViewController.hasNavigationController = false
+
+        addRepMenuPopoverViewController.menuItems = [
+            (image: UIImage(named: "Circle")!, title: "\(Bundle.main.displayName) \(Bundle.main.versionString)"),
+            (image: UIImage(named: "Square")!, title: "AutoCompleteAccessoryView"),
+            (image: UIImage(named: "Triangle")!, title: "EasyClosure"),
+            (image: UIImage(named: "Square")!, title: "EMTNeumorphicView"),
+            (image: UIImage(named: "Circle")!, title: "PDFForm"),
+        ]
+
+        pushController = MenuViewController(rootViewController: addRepMenuPopoverViewController, modalPresentationStyle: .custom, preferredContentSize: addRepMenuPopoverViewController.preferredContentSize, barButtonItem: sender, hasDoneButton: true)
+
+        pushController.shouldHideNavigationBar = false
+
+        pushController.present()
+
+    }
+
     func didSelectMenu(popoverMenuViewController: MenuTableViewController, row: Int) {
 
-//        popoverMenuViewController.navigationController?.pushViewController(UIViewController(), animated: true)
-        popoverMenuViewController.tableView.deselectRow(at: IndexPath(row: row, section: 0), animated: false)
+        if row == 0 {
+            let vc = MenuEmptyViewController()
+            vc.preferredContentSize = pushController.preferredContentSize
+            vc.preferredContentSize.height += 100
+            popoverMenuViewController.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            popoverMenuViewController.tableView.deselectRow(at: IndexPath(row: row, section: 0), animated: false)
+        }
 
     }
 
 }
+

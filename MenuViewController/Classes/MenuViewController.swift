@@ -79,6 +79,10 @@ public class MenuViewController: UIViewController {
             fatalError("Must have either sourceView & sourceRect or barButtonItem.")
         }
 
+        if let sourceRect = sourceRect {
+            self.popoverPresentationController?.sourceRect = sourceRect
+        }
+
         self.hasDoneButton = hasDoneButton
 
         if hasDoneButton, let navigationItem = wrappedNavigationController.viewControllers.first?.navigationItem {
@@ -178,9 +182,9 @@ extension MenuViewController: UIPopoverPresentationControllerDelegate {
 extension MenuViewController: UINavigationControllerDelegate {
 
     public func navigationController(_ navigationController: UINavigationController,
-                              animationControllerFor operation: UINavigationController.Operation,
-                              from fromVC: UIViewController,
-                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+                                     animationControllerFor operation: UINavigationController.Operation,
+                                     from fromVC: UIViewController,
+                                     to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         switch operation {
         case .push:
             if shouldHideNavigationBar {
@@ -237,7 +241,7 @@ extension MenuViewController: UIGestureRecognizerDelegate {
         onPan(recognizer)
 
     }
-    
+
     @objc func onPan(_ panGesture: UIPanGestureRecognizer) {
 
         func slideViewVertically(to y: CGFloat) {
@@ -267,7 +271,7 @@ extension MenuViewController: UIGestureRecognizerDelegate {
             let translation = panGesture.translation(in: view)
             let velocity = panGesture.velocity(in: view)
             let closing = (translation.y > self.view.frame.size.height * minimumScreenRatioToHide) ||
-                          (velocity.y > minimumVelocityToHide)
+                (velocity.y > minimumVelocityToHide)
 
             if closing {
                 UIView.animate(withDuration: animationDuration, animations: {
