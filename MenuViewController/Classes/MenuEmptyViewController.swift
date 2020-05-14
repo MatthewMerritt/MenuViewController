@@ -21,6 +21,12 @@ open class MenuEmptyViewController: UIViewController {
         }
     }
 
+    convenience init(with view: UIView) {
+        self.init()
+
+        self.view = view
+    }
+
     open override func viewWillAppear(_ animated: Bool) {
         parent?.preferredContentSize = preferredContentSize
         parent?.parent?.preferredContentSize = preferredContentSize

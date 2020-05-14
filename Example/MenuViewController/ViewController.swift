@@ -73,7 +73,12 @@ extension ViewController: MenuTableViewControllerDelegate {
             (image: UIImage(named: "Circle")!, title: "PDFForm"),
         ]
 
+        addRepMenuPopoverViewController.didSelectMenu = { menu, menuItem in
+            print(#function, menu, menuItem)
+        }
+
         pushController = MenuViewController(rootViewController: addRepMenuPopoverViewController, modalPresentationStyle: .custom, preferredContentSize: addRepMenuPopoverViewController.preferredContentSize, barButtonItem: sender, hasDoneButton: true)
+
 
         pushController.shouldHideNavigationBar = false
 

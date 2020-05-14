@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MenuViewController'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'MenuViewController is a Popover and/or Custom Menu View Controller.'
 
 # This description is used to generate tags and improve search results.
