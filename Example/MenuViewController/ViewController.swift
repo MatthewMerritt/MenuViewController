@@ -73,7 +73,7 @@ extension ViewController: MenuTableViewControllerDelegate {
             (image: UIImage(named: "Circle")!, title: "PDFForm"),
         ]
 
-        addRepMenuPopoverViewController.didSelectMenu = { menu, menuItem in
+        addRepMenuPopoverViewController.didSelectMenu = { menuTableViewController, menu, menuItem in
             print(#function, menu, menuItem)
         }
 
@@ -86,15 +86,15 @@ extension ViewController: MenuTableViewControllerDelegate {
 
     }
 
-    func didSelectMenu(popoverMenuViewController: MenuTableViewController, row: Int) {
+    func didSelectMenu(menuTableViewController menuTableViewController: MenuTableViewController, row: Int) {
 
         if row == 0 {
             let vc = MenuEmptyViewController()
             vc.preferredContentSize = pushController.preferredContentSize
             vc.preferredContentSize.height += 100
-            popoverMenuViewController.navigationController?.pushViewController(vc, animated: true)
+            menuTableViewController.navigationController?.pushViewController(vc, animated: true)
         } else {
-            popoverMenuViewController.tableView.deselectRow(at: IndexPath(row: row, section: 0), animated: false)
+            menuTableViewController.tableView.deselectRow(at: IndexPath(row: row, section: 0), animated: false)
         }
 
     }

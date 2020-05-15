@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: - AddMenuDelegate Protocol
 public protocol MenuTableViewControllerDelegate {
-    func didSelectMenu(popoverMenuViewController: MenuTableViewController ,row: Int)
+    func didSelectMenu(menuTableViewController: MenuTableViewController ,row: Int)
 }
 
 // MARK: - MenuTableViewController
@@ -20,7 +20,7 @@ open class MenuTableViewController: UITableViewController {
     // MARK: Public Properties
     public var delegate: MenuTableViewControllerDelegate?
 
-    public typealias DidSelectMenu = (Int, (image: UIImage, title: String)) -> Void
+    public typealias DidSelectMenu = (MenuTableViewController, Int, (image: UIImage, title: String)) -> Void
     public var didSelectMenu: DidSelectMenu? = nil
 
     public var dismissOnSelection: Bool = true
@@ -111,9 +111,9 @@ open class MenuTableViewController: UITableViewController {
     }
 
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didSelectMenu(popoverMenuViewController: self, row: indexPath.row)
+        delegate?.didSelectMenu(menuTableViewController: self, row: indexPath.row)
 
-        didSelectMenu?(indexPath.row, menuItems[indexPath.row])
+        didSelectMenu?(self, indexPath.row, menuItems[indexPath.row])
 
         if dismissOnSelection {
             dismiss(animated: true) { }
