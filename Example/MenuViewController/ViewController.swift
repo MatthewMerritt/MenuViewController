@@ -39,11 +39,11 @@ extension ViewController: MenuTableViewControllerDelegate {
         addRepMenuPopoverViewController.hasNavigationController = false
 
         addRepMenuPopoverViewController.menuItems = [
-            (image: UIImage(named: "Circle")!, title: "\(Bundle.main.displayName) \(Bundle.main.versionString)"),
-            (image: UIImage(named: "Square")!, title: "AutoCompleteAccessoryView"),
-            (image: UIImage(named: "Triangle")!, title: "EasyClosure"),
-            (image: UIImage(named: "Square")!, title: "EMTNeumorphicView"),
-            (image: UIImage(named: "Circle")!, title: "PDFForm"),
+            MenuItem(image: UIImage(named: "Circle")!, title: "\(Bundle.main.displayName) \(Bundle.main.versionString)"),
+            MenuItem(image: UIImage(named: "Square")!, title: "AutoCompleteAccessoryView"),
+            MenuItem(image: UIImage(named: "Triangle")!, title: "EasyClosure"),
+            MenuItem(image: UIImage(named: "Square")!, title: "EMTNeumorphicView"),
+            MenuItem(image: UIImage(named: "Circle")!, title: "PDFForm"),
         ]
 
         pushController = MenuViewController(rootViewController: addRepMenuPopoverViewController, modalPresentationStyle: .popover, preferredContentSize: addRepMenuPopoverViewController.preferredContentSize, barButtonItem: sender, hasDoneButton: false)
@@ -66,11 +66,11 @@ extension ViewController: MenuTableViewControllerDelegate {
         addRepMenuPopoverViewController.hasNavigationController = false
 
         addRepMenuPopoverViewController.menuItems = [
-            (image: UIImage(named: "Circle")!, title: "\(Bundle.main.displayName) \(Bundle.main.versionString)"),
-            (image: UIImage(named: "Square")!, title: "AutoCompleteAccessoryView"),
-            (image: UIImage(named: "Triangle")!, title: "EasyClosure"),
-            (image: UIImage(named: "Square")!, title: "EMTNeumorphicView"),
-            (image: UIImage(named: "Circle")!, title: "PDFForm"),
+            MenuItem(image: UIImage(named: "Circle")!, title: "\(Bundle.main.displayName) \(Bundle.main.versionString)"),
+            MenuItem(image: UIImage(named: "Square")!, title: "AutoCompleteAccessoryView"),
+            MenuItem(image: UIImage(named: "Triangle")!, title: "EasyClosure"),
+            MenuItem(image: UIImage(named: "Square")!, title: "EMTNeumorphicView"),
+            MenuItem(image: UIImage(named: "Circle")!, title: "PDFForm"),
         ]
 
         addRepMenuPopoverViewController.didSelectMenu = { menuTableViewController, menu, menuItem in
@@ -86,7 +86,7 @@ extension ViewController: MenuTableViewControllerDelegate {
 
     }
 
-    func didSelectMenu(menuTableViewController menuTableViewController: MenuTableViewController, row: Int) {
+    func didSelectMenu(menuTableViewController: MenuTableViewController, row: Int, menuItem: MenuItem) {
 
         if row == 0 {
             let vc = MenuEmptyViewController()
@@ -100,4 +100,4 @@ extension ViewController: MenuTableViewControllerDelegate {
     }
 
 }
-
+ 

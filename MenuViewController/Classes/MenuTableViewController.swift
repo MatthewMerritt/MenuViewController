@@ -11,7 +11,18 @@ import UIKit
 
 // MARK: - AddMenuDelegate Protocol
 public protocol MenuTableViewControllerDelegate {
-    func didSelectMenu(menuTableViewController: MenuTableViewController ,row: Int)
+    func didSelectMenu(menuTableViewController: MenuTableViewController, row: Int, menuItem: MenuItem)
+}
+
+// MARK: - MenuItem
+public struct MenuItem {
+    var image: UIImage
+    var title: String
+
+    public init(image: UIImage, title: String) {
+        self.image = image
+        self.title = title
+    }
 }
 
 // MARK: - MenuTableViewController
@@ -20,14 +31,14 @@ open class MenuTableViewController: UITableViewController {
     // MARK: Public Properties
     public var delegate: MenuTableViewControllerDelegate?
 
-    public typealias DidSelectMenu = (MenuTableViewController, Int, (image: UIImage, title: String)) -> Void
+    public typealias DidSelectMenu = (MenuTableViewController, Int, MenuItem) -> Void
     public var didSelectMenu: DidSelectMenu? = nil
 
     public var dismissOnSelection: Bool = true
 
     public var hasNavigationController: Bool = false
 
-    public var menuItems: [(image: UIImage, title: String)] = [] {
+    public var menuItems: [MenuItem] = [] {
         didSet {
 
             self.preferredContentSize.height = CGFloat(self.menuItems.count) * self.tableView.rowHeight + (self.hasNavigationController ? 44 : 0)
@@ -111,7 +122,7 @@ open class MenuTableViewController: UITableViewController {
     }
 
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didSelectMenu(menuTableViewController: self, row: indexPath.row)
+        delegate?.didSelectMenu(menuTableViewController: self, row: indexPath.row, menuItem: menuItems[indexPath.row])
 
         didSelectMenu?(self, indexPath.row, menuItems[indexPath.row])
 
